@@ -14,13 +14,100 @@ body {
 }
 
 
+/* ---------- */
+/*   HEADER   */
+/* ---------- */
+
+header {
+    height: 50px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    margin: 5px;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 80px auto 400px;
+    /* width: 70%; */
+}
+
+.header-content img {
+    filter: invert(0%) sepia(0%) saturate(11%) hue-rotate(30deg) brightness(25%) contrast(30%);
+    height: 40px;
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+}
+
+
+.header-content div {
+    display: grid;
+    height: 50px;
+}
+
+.header-content div:nth-of-type(2) {
+    display: flex;
+}
+.header-content div:nth-of-type(3) {
+    display: flex;
+}
+
+.header-content input {
+    height: 30px;
+    width: 500px;
+    margin: 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.header-content button {
+    padding: 0 5px;
+    margin: 0 10px 10px;
+    border-radius: 30px;
+}
+
+/* ---------- */
+/* NAVIGATION */
+/* ---------- */
+
+nav {
+    display: grid;
+}
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 50vw;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+nav ul li {
+    justify-self: center;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+ul li a {
+    color: #5e6176;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+ul li:hover a {
+    color: #4baaf4;
+}
+
+/* --------------------------- */
+/* DISPLAY CARDS WITH GRID CSS */
+/* --------------------------- */
+
 .container {
     display: grid;
     grid-gap: 30px;
     /* grid-template-columns: repeat(auto-fill, 300px);
     justify-content: center; */
     width: 70%;
-    margin: 50px auto;
+    margin: 20px auto ;
 }
 
 article {
@@ -30,6 +117,7 @@ article {
     background-color: #fff;
     max-height: 400px;
     border-radius: 5px;
+    box-shadow: 2px 2px 5px 1px #888888;
 }
 
 img {
@@ -64,14 +152,13 @@ p {
 button {
     width: 150px;
     margin: 10px auto 30px;
-    /* padding-top: 30px; */
     background-color: #fff;
     color: #5e6176;
     border: none;
     text-transform: uppercase;
     font-weight: 600;
+    cursor: pointer;
     position: relative;
-    /* overflow: hidden; */
 }
 
 
@@ -95,6 +182,11 @@ button::before {
 
 button:hover::before {
     height: 0; 
+}
+
+
+article:has(> button:hover) {
+    box-shadow: 5px 5px 10px 5px #a6a6a6;
 }
 
 
